@@ -18,6 +18,10 @@ from django.urls import path
 
 from felvevo.views import home_view
 
+from django.views.static import serve
+from django.conf.urls import url
+from django.conf import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
