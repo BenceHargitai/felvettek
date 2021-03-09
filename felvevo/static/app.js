@@ -19,9 +19,13 @@ function mutatas(){
         
 }
 function bejelentkezes(){
+    // megnézzük hogy üres-e, ha igen akkor visszadobjuk
     if ($("#vnev").val().replaceAll(" ","")=="" || $("#knev").val().replaceAll(" ","")=="" || $("#oma").val().replaceAll(" ","")=="")
     {
         alert("Valamelyik mező üresen maradt")
         return 0;
     }
+    var nev = $("#vnev").val() + " " + $("#knev").val()
+    var azonosito = $("#oma").val()
 }
+

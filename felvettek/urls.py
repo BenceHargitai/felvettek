@@ -21,5 +21,5 @@ from felvevo.views import home_view,login_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
-    path('login/', login_view, name='login'),
+    path('login/', login_view),
 ]
