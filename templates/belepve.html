@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SZLG felvételi</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'style.css'%} ">
+    <script src="{% static 'app.js' %}"></script>  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jost:wght@300&family=Roboto+Slab:wght@300&family=Spartan&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="baloldal">
+            <div id="wrapper"><img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/14/1d/d5/b7/szent-laszlo-gimnazium.jpg" id="myImage"></div>
+            <div class="cim"><h1>Üdvözlünk felvételiző!</h1></div>
+            <div class="beji"> Az "Eredmények mutatása" gombbal meg tudod tekinteni az eredményedeidet</div>
+        
+        </div>
+        <div id="jobboldal">
+            <div class="form">
+                <div class="omsor"> 
+                    <div class="azonosito nev">Név: </div>
+                        <div class="info">Kis Károly Bernadett</div>
+                    <div class="azonosito omszam">OM azonosító:</div>
+                        <div class="info">72148422460</div>
+                     <div class="buttonka" onclick="mutatas()"> Eredmények mutatása</div>
+                     <div class="azonosito tag">Tagozatok:</div>
+                    <div class="grid">
+                        <div>A: </div>
+                            <div id="A">sikertelen</div>
+                        <div>B: </div>
+                            <div id="B">sikeres</div>
+                        <div>C: </div>
+                            <div id="C">sikeres</div>
+                        <div>D: </div>
+                            <div id="D">sikeres</div>
+                        <div>E: </div>
+                            <div id="E">sikeres</div>
+                        <div>F: </div>
+                            <div id="F">sikeres</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

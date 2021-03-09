@@ -115,3 +115,21 @@ textarea:focus, input:focus{
 .buttonka:hover{
     cursor:pointer;
 }
+.info{
+    color:white;
+    font-size:19px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 8% 40% 8% 40%;
+    font-size: 19px;
+    color: white;
+    display:none;
+}
+.tag{
+    padding-top:30px;
+    display:none;
+}
+#A, #B, #C, #D, #E, #F{
+    color:rgb(255 92 160);
+}
