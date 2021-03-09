@@ -17,35 +17,69 @@
     <div class="container">
         <div id="baloldal">
             <div id="wrapper"><img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/14/1d/d5/b7/szent-laszlo-gimnazium.jpg" id="myImage"></div>
-            <div class="cim"><h1>Üdvözlünk felvételiző!</h1></div>
+            <div class="cim"><h1>Kedves felvételiző!</h1></div>
             <div class="beji"> Az "Eredmények mutatása" gombbal meg tudod tekinteni az eredményedeidet</div>
         
         </div>
         <div id="jobboldal">
+            {% csrf_token %} 
             <div class="form">
                 <div class="omsor"> 
+                    
                     <div class="azonosito nev">Név: </div>
-                        <div class="info">Kis Károly Bernadett</div>
+                        <div class="info">{{név}}</div>
                     <div class="azonosito omszam">OM azonosító:</div>
-                        <div class="info">72148422460</div>
-                     <div class="buttonka" onclick="mutatas()"> Eredmények mutatása</div>
+                        <div class="info">{{om}}</div>
+                     <button class="buttonka" onclick="mutatas()"> Eredmények mutatása</button>
                      <div class="azonosito tag">Tagozatok:</div>
+                        
                     <div class="grid">
+        
                         <div>A: </div>
-                            <div id="A">sikertelen</div>
-                        <div>B: </div>
-                            <div id="B">sikeres</div>
+                        {% if a == "True" %}
+                            <div id="A">sikeres</div>    
+                        {% else %}
+                            <div id="A">sikertelen</div>    
+                        {% endif %}
+
+                        <div>B: </div>   
+                        {% if b == "True " %}
+                            <div id="B">sikeres</div>    
+                        {% else %}
+                            <div id="B">sikertelen</div>    
+                        {% endif %}
+
                         <div>C: </div>
-                            <div id="C">sikeres</div>
+                        {% if c == "True" %}
+                            <div id="C">sikeres</div>    
+                        {% else %}
+                            <div id="C">sikertelen</div>    
+                        {% endif %}
+
                         <div>D: </div>
-                            <div id="D">sikeres</div>
+                        {% if d == "True" %}
+                            <div id="D">sikeres</div>    
+                        {% else %}
+                            <div id="D">sikertelen</div>    
+                        {% endif %}
+
+                        
                         <div>E: </div>
-                            <div id="E">sikeres</div>
+                        {% if e == "True" %}
+                            <div id="E">sikeres</div>    
+                        {% else %}
+                            <div id="E">sikertelen</div>    
+                        {% endif %}
+
                         <div>F: </div>
-                            <div id="F">sikeres</div>
+                       {% if f == "True" %}
+                            <div id="F">sikeres</div>    
+                        {% else %}
+                            <div id="F">sikertelen</div>    
+                        {% endif %}
+              
                     </div>
-            </div>
-        </div>
+                </div>
     </div>
 </body>
 </html>

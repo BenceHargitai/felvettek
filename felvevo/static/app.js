@@ -25,7 +25,6 @@ function bejelentkezes(){
         alert("Valamelyik mező üresen maradt")
         return 0;
     }
-    var nev = $("#vnev").val() + " " + $("#knev").val()
-    var azonosito = $("#oma").val()
 }
+
 

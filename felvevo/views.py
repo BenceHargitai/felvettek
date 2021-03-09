@@ -5,10 +5,24 @@ from .models import Tanuló
 def home_view(request, *args, **kwargs):
     mitortent = []
     if request.method =="POST":
-        mitortent = Tanuló.bejelentkezes(request.POST)
+        if (Tanuló.bejelentkezes(request.POST) == True):
+            adatok = Tanuló.adatoklekerese(request.POST['number'])
+            x = str(adatok). replace('<','').replace('>','').split('|') 
+            kontextus = {
+                "név" : x[0],
+                "om" : x[1],
+                "a" : x[2].replace(" ",""),
+                "b" : x[3].replace(" ",""),
+                "c" : x[4].replace(" ",""),
+                "d" : x[5].replace(" ",""),
+                "e" : x[6].replace(" ",""),
+                "f" : x[7].replace(" ",""),
+            }
+            print(kontextus)
+            return render(request, "belepve.html", kontextus)
 
-    kontextus = {"Tanulók": Tanuló.objects.all(), "mitortent": mitortent}
+    kontextus = {
+        
+    }
     return render(request, "home.html", kontextus) 
 
-def login_view(request, *args, **kwargs):
-    return render(request, "belepve.html")

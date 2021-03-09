@@ -18,27 +18,34 @@
 
         <div id="baloldal">
             <div id="wrapper"><img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/14/1d/d5/b7/szent-laszlo-gimnazium.jpg" id="myImage"></div>
-            <div class="cim"><h1>Üdvözlünk felvételiző!</h1></div>
+            <div class="cim"><h1>Kedves felvételiző!</h1></div>
             <div class="beji"> Ahhoz, hogy megtekintsd az eredményedeidet kérlek jelentkezz be!</div>
         
         </div>
         <div id="jobboldal">
             <div class="form">
-                <form method="POST">
-                    {% csrf_token %}
+                
+                    
                     <div class="omsor"> 
-                        <div class="azonosito felso">Vezetéknév <br>
-                            <input type="text" class="omtext" id="vnev" style="display: block" placeholder="Emil" name="vnev"></div>
-                        <div class="azonosito kozep">Keresztnév</div>
-                            <input type="text" class="omtext" id="knev" style="display: block" placeholder="Rahim" name="knev">
-                        <div class="azonosito also">OM azonosító
-                            <input type="text" class="omtext" id="azonosito" style="display: block" placeholder="123456789" name="azonosito"></div>
-                     <!--<div class="buttonka" onclick="bejelentkezes()" type="submit"> Bejelentkezés</div>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="azonosito felso">Vezetéknév</div>
+                                <input type="text" class="omtext" id="vnev" style="display: block" placeholder="Emil" name="vnev">
+                            <div class="azonosito kozep">Keresztnév</div>
+                                <input type="text" class="omtext" id="knev" style="display: block" placeholder="Rahim" name="knev">
+                            <div class="azonosito kozep">OM azonosító</div>
+                                <input type="text" class="omtext" id="number" style="display: block" placeholder="123456789" name="number">
+                            <button method="submit" class="buttonka" onclick="bejelentkezes()">Bejelentkezés</button>
+                        </form>
+
+                      <!--   <div class="azonosito also">OM azonosító </div>
+                            <input type="text" class="omtext" id="azonosito" style="display: block" placeholder="123456789" name="azonosito">
+                     <div class="buttonka" onclick="bejelentkezes()" type="submit"> Bejelentkezés</div>
                     input type="text" class="omtext"  id="szam" style="display: block" placeholder="123456789" maxlength="11" name="szam">
                     -->
-                     <button class="buttonka">Küldés</button>
+                        <!--<button class="buttonka">Küldés</button>
                     </div>
-                </form>
+           
             </div>
         </div>
     </div>
