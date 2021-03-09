@@ -10,9 +10,29 @@
     <link rel="stylesheet" href="{% static 'style.css'%} ">
     <script src="{% static 'app.js' %}"></script>  
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jost:wght@300&family=Roboto+Slab:wght@300&family=Spartan&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>Szent László Gimnázium</header>
+    <div class="container">
+        <div id="baloldal">
+            <div id="wrapper"><img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/14/1d/d5/b7/szent-laszlo-gimnazium.jpg" id="myImage"></div>
+            <div class="cim"><h1>Üdvözlünk felvételiző!</h1></div>
+            <div class="beji"> Ahhoz, hogy megtekintsd az eredményedeidet kérlek jelentkezz be!</div>
+        
+        </div>
+        <div id="jobboldal">
+            <div class="form">
+                <div class="omsor"> 
+                    <div class="azonosito felso">Vezetéknév <br>
+                    <input type="text" class="omtext" style="display: block" placeholder="Emil"></div>
+                    <div class="azonosito kozep">Keresztnév</div>
+                    <input type="text" class="omtext" style="display: block" placeholder="Rahim">
+                    <div class="azonosito also">OM azonosító</div>
+                    <input type="text" name="OM" class="omtext" style="display: block" placeholder="123456789" maxlength="11">
+                   <div class="buttonka"> Bejelentkezés</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
