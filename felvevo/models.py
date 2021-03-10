@@ -7,20 +7,15 @@ class Tanuló(models.Model):
     név = models.CharField(max_length=30)
     om = models.CharField(max_length=11)
     # nagyon gagyi így, listával jobb lenne na mindegy
-    a = models.BooleanField()
-    b = models.BooleanField()
-    c = models.BooleanField()
-    d = models.BooleanField()
-    e = models.BooleanField()
-    f = models.BooleanField()
-    
+    szak = models.CharField(max_length=30)
+    felveve = models.CharField(max_length=6)  
 
     class Meta:
         verbose_name = ("Tanuló")
         verbose_name_plural = ("Tanulók")
 
     def __str__(self):
-         return f"{self.név} | {self.om} | {self.a} | {self.b} | {self.c} | {self.d} | {self.e} | {self.f}"
+         return f"{self.név} | {self.om} | {self.szak} | {self.felveve}"
 
     def feltoltes():
         with open('input.tsv', 'r') as f:
@@ -36,8 +31,8 @@ class Tanuló(models.Model):
                     print(f"{nev} nevű diákot hozzáadtam {tan[2]} OM azonosítóval!")
             return 0
 
-    def azonositas(name, azonosito):
-        return Tanuló.objects.filter(név=name, om=azonosito).count()!=0
+    def azonositas(azonosito):
+        return Tanuló.objects.filter(om=azonosito).count()!=0
 
     def bejelentkezes(post):
         print("POST request érkezet!!! :)")
@@ -46,19 +41,19 @@ class Tanuló(models.Model):
 
         print(f"{teljes} felhasználónevű tanuló a {azonosito} OM-et beírva akar bejelentkezni")
 
-        tlista = list(Tanuló.objects.filter(név=teljes, om=azonosito))
+        tlista = list(Tanuló.objects.filter(om=azonosito))
         if (teljes == "Add 1" and azonosito =="5"):
             print("--------Feltöltés elkezdve--------")
             Tanuló.feltoltes()
             print("--------Feltöltés befejezve--------")
             return 0
 
-        if not Tanuló.azonositas(teljes, azonosito):
+        if not Tanuló.azonositas(azonosito):
             print("sikertelen azonosítás!")
-            return 0
+            return False
         
 
-        diak = tlista[0]
+        print(tlista)
         print("sikeres azonosítás.")
         #print(diak)
         return True
@@ -66,5 +61,5 @@ class Tanuló(models.Model):
 
     def adatoklekerese(azonosito):
         tlista = list(Tanuló.objects.filter(om=azonosito))
-        return tlista[0]
+        return tlista
 		

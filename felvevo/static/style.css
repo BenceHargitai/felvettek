@@ -123,7 +123,7 @@ button:hover{
 }
 .grid {
     display: grid;
-    grid-template-columns: 8% 40% 8% 40%;
+    grid-template-columns: 40% 40%;
     font-size: 19px;
     color: white;
     display:none;
@@ -132,7 +132,11 @@ button:hover{
     padding-top:30px;
     display:none;
 }
-#A, #B, #C, #D, #E, #F{
+.nemeredmeny{
     color:rgb(255 92 160);
 }
 button:focus {outline:0;}
+
+.eredmeny{
+    color: #2dc71b;
+}

@@ -7,18 +7,25 @@ def home_view(request, *args, **kwargs):
     if request.method =="POST":
         if (Tanuló.bejelentkezes(request.POST) == True):
             adatok = Tanuló.adatoklekerese(request.POST['number'])
-            x = str(adatok). replace('<','').replace('>','').split('|') 
+            info = str(adatok[0]).replace('<','').replace('>','').split('|') 
+            count = 0
+            
+            array = []
+            for k in adatok:
+                szakok = {}
+                info = str(adatok[count]).replace('<','').replace('>','').split('|') 
+                szak = info[2].replace(" ","")
+                felveve = info[3].replace(" ","")
+                szakok["szak"] = szak
+                szakok["dontes"] = felveve
+                array.append(szakok)
+                count = count + 1
             kontextus = {
-                "név" : x[0],
-                "om" : x[1],
-                "a" : x[2].replace(" ",""),
-                "b" : x[3].replace(" ",""),
-                "c" : x[4].replace(" ",""),
-                "d" : x[5].replace(" ",""),
-                "e" : x[6].replace(" ",""),
-                "f" : x[7].replace(" ",""),
+                "név" : info[0],
+                "om" : info[1].replace(" ",""),
+                "szakok" : array
             }
-            print(kontextus)
+            print (kontextus)
             return render(request, "belepve.html", kontextus)
 
     kontextus = {

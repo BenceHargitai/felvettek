@@ -35,49 +35,17 @@
                         
                     <div class="grid">
         
-                        <div>A: </div>
-                        {% if a == "True" %}
-                            <div id="A">sikeres</div>    
-                        {% else %}
-                            <div id="A">sikertelen</div>    
-                        {% endif %}
-
-                        <div>B: </div>   
-                        {% if b == "True " %}
-                            <div id="B">sikeres</div>    
-                        {% else %}
-                            <div id="B">sikertelen</div>    
-                        {% endif %}
-
-                        <div>C: </div>
-                        {% if c == "True" %}
-                            <div id="C">sikeres</div>    
-                        {% else %}
-                            <div id="C">sikertelen</div>    
-                        {% endif %}
-
-                        <div>D: </div>
-                        {% if d == "True" %}
-                            <div id="D">sikeres</div>    
-                        {% else %}
-                            <div id="D">sikertelen</div>    
-                        {% endif %}
-
-                        
-                        <div>E: </div>
-                        {% if e == "True" %}
-                            <div id="E">sikeres</div>    
-                        {% else %}
-                            <div id="E">sikertelen</div>    
-                        {% endif %}
-
-                        <div>F: </div>
-                       {% if f == "True" %}
-                            <div id="F">sikeres</div>    
-                        {% else %}
-                            <div id="F">sikertelen</div>    
-                        {% endif %}
-              
+                       {% for item in szakok %}
+                                <div class="szak">{{ item.szak }}:</div>
+                                {% if item.dontes == 'Igen' %}
+                                    <div class="eredmeny">Sikeres</div>
+                                {% else %}
+                                    <div class="nemeredmeny">Sikertelen</div>
+                                {% endif %}
+                                    
+                                    
+                       {% endfor %}
+                           
                     </div>
                 </div>
     </div>
